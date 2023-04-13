@@ -67,6 +67,7 @@
     height: 55px;
     margin: 11px 10px;
     opacity: 0.2;
+    cursor: pointer;
 }
 
 .active{

@@ -152,8 +152,6 @@ document.getElementById('autoBack').addEventListener('click', ()=>{
     });
 });
 
-
-
 // funzione al click il cambio di sfondo
 let thumbnails = document.querySelectorAll('.thumb img');
 
