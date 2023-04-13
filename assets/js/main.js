@@ -94,9 +94,6 @@ prev.addEventListener('click',()=>{
 });
 
 
-// funzione al click il cambio di sfondo
-// let thumbnails = document.querySelectorAll('.thumb');
-
 document.getElementById('auto').addEventListener('click', ()=>{
     const auto = setInterval(autoScroll, 2000);
     function autoScroll(){
@@ -125,3 +122,32 @@ document.getElementById('auto').addEventListener('click', ()=>{
         clearInterval(auto);
     });
 })
+
+document.getElementById('autoBack').addEventListener('click', ()=>{
+    const autoBack = setInterval(backScroll, 2000);
+    function backScroll(){
+        
+        if( index == 0){
+            index = images.length - 1;
+        } else{
+            index--;
+        }
+        
+        main.src = path + images[index].image;
+        item.innerHTML = `
+        <div class="item">
+            <img src=${path+images[index].image} alt="" id="main">
+                <div class="details">
+                    <h2>${images[index].title}</h2>
+                    <p>${images[index].text}</p>
+                </div> 
+        </div>    
+        `
+        document.querySelector('.thumb.active').classList.remove('active');
+        document.querySelectorAll('.thumb')[index].classList.add('active');
+    }
+
+    document.getElementById('stop').addEventListener('click', ()=>{
+        clearInterval(autoBack);
+    });
+});
