@@ -6,10 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>js-array-objects-carousel</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
     
+    <div id="web-app">
+        
+        <div id="carousel">
+
+            <!--slider immagini principale-->
+            <div id="slider">
+                <div class="items">
+                    <div class="item first active">
+                        <img src="./assets/img/01.webp" alt="">
+                    </div>
+                    <div class="item">
+                        <img src="./assets/img/02.webp" alt="">
+                    </div>
+                    <div class="item">
+                        <img src="./assets/img/03.webp" alt="">
+                    </div>
+                    <div class="item last">
+                        <img src="./assets/img/04.webp" alt="">
+                    </div>
+                    <div class="item last">
+                        <img src="./assets/img/05.webp" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <!--sezione miniature-->
+            <div id="thumbnail">
+                <div id="next">
+                    <i class="fa-solid fa-chevron-up"></i>
+                </div>
+                <div id="prev">
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+
+                <div class="thumbnails">
+                    <div class="thumb">a</div>
+                    <div class="thumb">b</div>
+                    <div class="thumb">c</div>
+                    <div class="thumb">d</div>
+                    <div class="thumb">e</div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="./assets/js/main.js"></script>
 </body>
