@@ -48,7 +48,7 @@
     transform: translateX(-50%);
     font-size: 20px;
     color: white;
-    opacity: 0.2;
+    opacity: 0.5;
 }
 
 #prev{
@@ -78,16 +78,6 @@
     object-fit: cover;
     object-position: center;
 }
-
-.item.active{
-    display: block;
-}
-
-.item{
-    display: none;
-}
-
-
 
 .details{
     border: 1px solid white;
