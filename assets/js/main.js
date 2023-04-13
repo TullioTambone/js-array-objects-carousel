@@ -51,7 +51,6 @@ let next = document.getElementById('next');
 let prev = document.getElementById('prev');
 let index = 0;
 let item = document.getElementById('slider');
-console.log(item);
 
 
 next.addEventListener('click',()=>{
@@ -89,11 +88,40 @@ prev.addEventListener('click',()=>{
 
     index--;
 
-    if(index <= 0){
+    if(index <= -1){
         index = images.length - 1;
     }
 });
 
-document.querySelector('.thumb').addEventListener('click',()=>{
-    
-});
+
+// funzione al click il cambio di sfondo
+// let thumbnails = document.querySelectorAll('.thumb');
+
+document.getElementById('auto').addEventListener('click', ()=>{
+    const auto = setInterval(autoScroll, 2000);
+    function autoScroll(){
+        
+        if( index == images.length - 1){
+            index = 0;
+        } else{
+            index++;
+        }
+        
+        main.src = path + images[index].image;
+        item.innerHTML = `
+        <div class="item">
+            <img src=${path+images[index].image} alt="" id="main">
+                <div class="details">
+                    <h2>${images[index].title}</h2>
+                    <p>${images[index].text}</p>
+                </div> 
+        </div>    
+        `
+        document.querySelector('.thumb.active').classList.remove('active');
+        document.querySelectorAll('.thumb')[index].classList.add('active');
+    }
+
+    document.getElementById('stop').addEventListener('click', ()=>{
+        clearInterval(auto);
+    });
+})
