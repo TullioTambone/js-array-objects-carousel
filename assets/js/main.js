@@ -46,10 +46,54 @@ const images = [
 
 
 //selezione prev e next 
-
-let prev = document.getElementById('prev');
+let path = `./assets/`
 let next = document.getElementById('next');
+let prev = document.getElementById('prev');
+let index = 0;
+let item = document.getElementById('slider');
+console.log(item);
+
+
+next.addEventListener('click',()=>{
+    item.innerHTML = `
+    <div class="item">
+        <img src=${path+images[index].image} alt="" id="main">
+            <div class="details">
+                <h2>${images[index].title}</h2>
+                <p>${images[index].text}</p>
+            </div> 
+    </div>    
+    `
+    document.querySelector('.thumb.active').classList.remove('active');
+    document.querySelectorAll('.thumb')[index].classList.add('active');
+
+    index++;
+
+    if(index >= images.length){
+        index = 0;
+    }
+});
 
 prev.addEventListener('click',()=>{
-    let 
-})
+    item.innerHTML = `
+    <div class="item">
+        <img src=${path+images[index].image} alt="" id="main">
+            <div class="details">
+                <h2>${images[index].title}</h2>
+                <p>${images[index].text}</p>
+            </div> 
+    </div>    
+    `
+    document.querySelector('.thumb.active').classList.remove('active');
+    document.querySelectorAll('.thumb')[index].classList.add('active');
+
+    index--;
+
+    if(index <= 0){
+        index = images.length - 1;
+    }
+});
+
+document.querySelector('.thumb').addEventListener('click',()=>{
+    
+});

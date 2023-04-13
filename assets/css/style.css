@@ -62,13 +62,12 @@
 }
 
 .thumb{
-    border: 1px solid green;
     height: 55px;
     margin: 11px 10px;
     opacity: 0.2;
 }
 
-.thumb-active{
+.active{
     opacity: 1;
 }
 
@@ -80,10 +79,11 @@
 }
 
 .details{
-    border: 1px solid white;
+    color: rgb(255, 255, 255);
     height: 100px;
     position: absolute;
     bottom: 0;
     left: 50px;
     right: 130px;
+    text-align: right;
 }
