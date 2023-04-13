@@ -151,3 +151,29 @@ document.getElementById('autoBack').addEventListener('click', ()=>{
         clearInterval(autoBack);
     });
 });
+
+
+
+// funzione al click il cambio di sfondo
+let thumbnails = document.querySelectorAll('.thumb img');
+
+console.log(thumbnails);
+
+for (let i = 0; i < thumbnails.length; i++) {
+    thumbnails[i].addEventListener('click', ()=>{
+        let savePath = thumbnails[i].getAttribute('src');
+        main.src = savePath;
+       
+        item.innerHTML = `
+        <div class="item">
+            <img src=${path+images[i].image} alt="" id="main">
+                <div class="details">
+                    <h2>${images[i].title}</h2>
+                    <p>${images[i].text}</p>
+                </div> 
+        </div>    
+        `
+        document.querySelector('.thumb.active').classList.remove('active');
+        document.querySelectorAll('.thumb')[i].classList.add('active');
+    });
+}
